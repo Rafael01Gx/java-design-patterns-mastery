@@ -179,7 +179,7 @@ Este repositório contém uma coleção completa de **padrões de projeto** (Des
 ### Pré-requisitos
 
 ```bash
-Java 11+ instalado
+Java 25 instalado
 IDE de sua preferência (IntelliJ IDEA, Eclipse, VS Code)
 ```
 
