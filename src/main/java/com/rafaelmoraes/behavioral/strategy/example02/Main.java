@@ -27,7 +27,7 @@ public class Main {
         IO.println("📝 ID da mensagem: " + result.messageId());
 
 
-
+        IO.println("=======".repeat(10));
         IO.println("\n📌 EXEMPLO 2: Broadcasting Multi-Canal\n");
 
         var urgentMsg = new NotificationMessage(
@@ -50,11 +50,11 @@ public class Main {
         );
 
 
-
+        IO.println("=======".repeat(10));
         IO.println("\n📌 EXEMPLO 3: Envio com Fallback Automático\n");
 
         var msgFallback = new NotificationMessage(
-                "usuario_invalido",  // Email inválido
+                "+5511928765483",  // Email inválido
                 "Teste Fallback",
                 "Esta mensagem testará o fallback automático"
         );
@@ -64,11 +64,11 @@ public class Main {
                 NotificationChannel.SMS,
                 msgFallback
         ).get();
+        var mssg = fallbackResult.success() ? "✅ Entregue via: " : "❌ Falha na tentativa de fallback via: " ;
+        IO.println( mssg + fallbackResult.channel());
 
-        IO.println("✅ Entregue via: " + fallbackResult.channel());
 
-
-
+        IO.println("=======".repeat(10));
         IO.println("\n📌 EXEMPLO 4: Seleção Inteligente por Prioridade\n");
 
         var urgentTransaction = new NotificationMessage(

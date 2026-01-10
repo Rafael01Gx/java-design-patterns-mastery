@@ -74,7 +74,7 @@ public class NotificationService {
                     if (result.success()) {
                         return CompletableFuture.completedFuture(result);
                     }
-                   IO.println("⚠️  Falha no canal " + primary + ", tentando " + fallback);
+                    IO.println("⚠️  Falha no canal " + primary + ", tentando " + fallback);
                     return send(fallback, message);
                 });
     }
