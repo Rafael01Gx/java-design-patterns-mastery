@@ -3,6 +3,7 @@ package com.rafaelmoraes.behavioral.strategy.example02;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 
 public class NotificationService {
@@ -53,12 +54,16 @@ public class NotificationService {
             NotificationMessage message) {
 
         List<CompletableFuture<NotificationResult>> futures = channels.stream()
-                .map(channel -> send(channel, message))
+                .map(channel -> send(channel, message)
+                        .exceptionally(ex -> {
+                            return null;
+                        }))
                 .toList();
 
         return CompletableFuture.allOf(futures.toArray(new CompletableFuture[0]))
                 .thenApply(v -> futures.stream()
                         .map(CompletableFuture::join)
+                        .filter(Objects::nonNull)
                         .toList());
 
 
