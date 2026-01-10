@@ -12,9 +12,9 @@ import java.util.concurrent.ExecutionException;
 
 public class Main {
     static void main() throws ExecutionException, InterruptedException {
-        System.out.println("=".repeat(70));
-        System.out.println("🏭 FACTORY METHOD PATTERN - SISTEMA DE PAGAMENTOS");
-        System.out.println("=".repeat(70));
+        IO.println("=".repeat(70));
+        IO.println("🏭 FACTORY METHOD PATTERN - SISTEMA DE PAGAMENTOS");
+        IO.println("=".repeat(70));
 
         Customer customer = new Customer(
                 "João Silva",
@@ -25,7 +25,7 @@ public class Main {
         // ====================================================================
         // EXEMPLO 1: Pagamento com Cartão de Crédito
         // ====================================================================
-        System.out.println("\n📌 EXEMPLO 1: Pagamento com Cartão de Crédito\n");
+        IO.println("\n📌 EXEMPLO 1: Pagamento com Cartão de Crédito\n");
 
         PaymentFactory creditCardFactory = new CreditCardPaymentFactory(
                 "4532123456789012",
@@ -43,7 +43,7 @@ public class Main {
         // ====================================================================
         // EXEMPLO 2: Pagamento com PIX
         // ====================================================================
-        System.out.println("\n📌 EXEMPLO 2: Pagamento com PIX\n");
+        IO.println("\n📌 EXEMPLO 2: Pagamento com PIX\n");
 
         PaymentFactory pixFactory = new PixPaymentFactory(
                 "joao@email.com",
@@ -58,7 +58,7 @@ public class Main {
         // ====================================================================
         // EXEMPLO 3: Pagamento com Boleto
         // ====================================================================
-        System.out.println("\n📌 EXEMPLO 3: Pagamento com Boleto Bancário\n");
+        IO.println("\n📌 EXEMPLO 3: Pagamento com Boleto Bancário\n");
 
         PaymentFactory boletoFactory = new BoletoPaymentFactory(
                 "237",  // Bradesco
@@ -73,7 +73,7 @@ public class Main {
         // ====================================================================
         // EXEMPLO 4: Pagamento com PayPal
         // ====================================================================
-        System.out.println("\n📌 EXEMPLO 4: Pagamento com PayPal\n");
+        IO.println("\n📌 EXEMPLO 4: Pagamento com PayPal\n");
 
         PaymentFactory paypalFactory = new PayPalPaymentFactory(
                 "joao@paypal.com",
@@ -88,7 +88,7 @@ public class Main {
         // ====================================================================
         // EXEMPLO 5: Processamento em Lote
         // ====================================================================
-        System.out.println("\n📌 EXEMPLO 5: Processamento em Lote\n");
+        IO.println("\n📌 EXEMPLO 5: Processamento em Lote\n");
 
         List<PaymentFactory> factories = List.of(
                 new CreditCardPaymentFactory("4532111111111111", "MARIA SANTOS", "06/2027", "456", 1),
@@ -104,30 +104,30 @@ public class Main {
 
         for (int i = 0; i < factories.size(); i++) {
             PaymentResult result = factories.get(i).processPayment(transactions.get(i)).get();
-            System.out.println("   " + result.status().getIcon() + " " +
+            IO.println("   " + result.status().getIcon() + " " +
                     result.status().getDisplayName());
         }
 
-        System.out.println("\n" + "=".repeat(70));
-        System.out.println("✅ DEMONSTRAÇÃO CONCLUÍDA!");
-        System.out.println("=".repeat(70));
+        IO.println("\n" + "=".repeat(70));
+        IO.println("✅ DEMONSTRAÇÃO CONCLUÍDA!");
+        IO.println("=".repeat(70));
     }
 
     private static void printResult(PaymentResult result) {
-        System.out.println("\n📊 RESULTADO:");
-        System.out.println("   Status: " + result.status().getIcon() + " " +
+        IO.println("\n📊 RESULTADO:");
+        IO.println("   Status: " + result.status().getIcon() + " " +
                 result.status().getDisplayName());
         if (result.transactionId() != null) {
-            System.out.println("   ID Transação: " + result.transactionId());
+            IO.println("   ID Transação: " + result.transactionId());
         }
-        System.out.println("   Mensagem: " + result.message());
-        System.out.println("   Processado em: " +
+        IO.println("   Mensagem: " + result.message());
+        IO.println("   Processado em: " +
                 result.processedAt().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss")));
 
         if (!result.metadata().isEmpty()) {
-            System.out.println("   Detalhes Adicionais:");
+            IO.println("   Detalhes Adicionais:");
             result.metadata().forEach((k, v) ->
-                    System.out.println("      " + k + ": " + v));
+                    IO.println("      " + k + ": " + v));
         }
     }
 }

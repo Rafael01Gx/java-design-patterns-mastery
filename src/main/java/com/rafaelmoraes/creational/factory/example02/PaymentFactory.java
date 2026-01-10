@@ -11,6 +11,7 @@ public abstract class PaymentFactory {
      * Factory Method - Método abstrato que será implementado pelas subclasses
      * Este é o CORE do padrão Factory Method!
      */
+
     protected abstract Payment createPayment();
 
     /**
@@ -26,13 +27,13 @@ public abstract class PaymentFactory {
             );
         }
 
-        System.out.println("\n" + "=".repeat(60));
-        System.out.println(payment.getType().getIcon() + " PROCESSANDO: " +
+        IO.println("\n" + "=".repeat(60));
+        IO.println(payment.getType().getIcon() + " PROCESSANDO: " +
                 payment.getType().getDisplayName());
-        System.out.println("Detalhes: " + payment.getDetails());
-        System.out.println("Transação: " + transaction.id());
-        System.out.println("Valor: R$ " + transaction.amount());
-        System.out.println("=".repeat(60));
+        IO.println("Detalhes: " + payment.getDetails());
+        IO.println("Transação: " + transaction.id());
+        IO.println("Valor: R$ " + transaction.amount());
+        IO.println("=".repeat(60));
 
         return payment.process(transaction);
     }
