@@ -179,6 +179,7 @@ Este repositório contém uma coleção completa de **padrões de projeto** (Des
 ### Pré-requisitos
 
 ```bash
+
 Java 25 instalado
 IDE de sua preferência (IntelliJ IDEA, Eclipse, VS Code)
 ```
@@ -186,6 +187,7 @@ IDE de sua preferência (IntelliJ IDEA, Eclipse, VS Code)
 ### Clonando o Repositório
 
 ```bash
+
 git clone https://github.com/seu-usuario/java-design-patterns-mastery.git
 cd java-design-patterns-mastery
 ```
