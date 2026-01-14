@@ -1,4 +1,4 @@
-package com.rafaelmoraes.structural.composite.component;
+package com.rafaelmoraes.structural.composite.example01.component;
 
 import java.util.List;
 

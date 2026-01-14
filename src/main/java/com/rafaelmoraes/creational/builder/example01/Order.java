@@ -1,4 +1,4 @@
-package com.rafaelmoraes.creational.builder;
+package com.rafaelmoraes.creational.builder.example01;
 
 public class Order {
 

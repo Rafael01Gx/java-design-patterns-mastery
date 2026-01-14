@@ -1,7 +1,7 @@
-package com.rafaelmoraes.structural.composite.client;
+package com.rafaelmoraes.structural.composite.example01.client;
 
-import com.rafaelmoraes.structural.composite.component.FileSystemComponent;
-import com.rafaelmoraes.structural.composite.leaf.Folder;
+import com.rafaelmoraes.structural.composite.example01.component.FileSystemComponent;
+import com.rafaelmoraes.structural.composite.example01.leaf.Folder;
 
 public class FileSystemManager {
 

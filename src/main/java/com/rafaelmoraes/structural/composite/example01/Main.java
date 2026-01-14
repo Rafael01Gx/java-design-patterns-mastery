@@ -1,9 +1,9 @@
-package com.rafaelmoraes.structural.composite;
+package com.rafaelmoraes.structural.composite.example01;
 
-import com.rafaelmoraes.structural.composite.client.FileSystemManager;
-import com.rafaelmoraes.structural.composite.component.FileSystemComponent;
-import com.rafaelmoraes.structural.composite.leaf.File;
-import com.rafaelmoraes.structural.composite.leaf.Folder;
+import com.rafaelmoraes.structural.composite.example01.client.FileSystemManager;
+import com.rafaelmoraes.structural.composite.example01.component.FileSystemComponent;
+import com.rafaelmoraes.structural.composite.example01.leaf.File;
+import com.rafaelmoraes.structural.composite.example01.leaf.Folder;
 
 import java.util.List;
 

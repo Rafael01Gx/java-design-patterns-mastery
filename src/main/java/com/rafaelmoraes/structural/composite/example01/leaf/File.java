@@ -1,6 +1,6 @@
-package com.rafaelmoraes.structural.composite.leaf;
+package com.rafaelmoraes.structural.composite.example01.leaf;
 
-import com.rafaelmoraes.structural.composite.component.FileSystemComponent;
+import com.rafaelmoraes.structural.composite.example01.component.FileSystemComponent;
 
 public class File extends FileSystemComponent {
 

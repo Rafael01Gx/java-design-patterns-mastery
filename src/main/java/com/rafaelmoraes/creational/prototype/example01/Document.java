@@ -1,4 +1,4 @@
-package com.rafaelmoraes.creational.prototype;
+package com.rafaelmoraes.creational.prototype.example01;
 
 import java.util.*;
 
